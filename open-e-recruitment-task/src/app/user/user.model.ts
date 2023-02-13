@@ -37,7 +37,6 @@ export class User {
         bs: string;
     }) {
 
-
         this.id = id;
         this.name = name;
         this.username = username;
