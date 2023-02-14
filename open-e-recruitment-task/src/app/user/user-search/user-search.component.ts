@@ -16,18 +16,21 @@ export class UserSearchComponent {
 
 
   onSubmit():void {
-      this.userService.searchUser(this.userIndex).subscribe({
-        next: () =>{
-          this.router.navigate(['/user/' + this.userIndex]);
-        },
-        error: (error) => {
-          if (error.status === 404){
-            this.router.navigate(['/user/' + this.userIndex]);
-          } else {
-            //display error message
-          }
-          }
-      });
+
+    this.router.navigate(['/user/' + this.userIndex]);
+    
+      // this.userService.searchUser(this.userIndex).subscribe({
+      //   next: () =>{
+      //     this.router.navigate(['/user/' + this.userIndex]);
+      //   },
+      //   error: (error) => {
+      //     if (error.status === 404){
+      //       this.router.navigate(['/user/' + this.userIndex]);
+      //     } else {
+      //       //display error message
+      //     }
+      //     }
+      // });
   }
 
   constructor(private userService: UserService, private router: Router){}

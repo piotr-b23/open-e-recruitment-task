@@ -1,6 +1,11 @@
-<div *ngIf="!userFound">
-    <app-user-warning [userIndex]="userIndex"></app-user-warning>
+<div *ngIf="isLoaded">
+    <div *ngIf="!userFound">
+        <app-user-warning [userIndex]="userIndex"></app-user-warning>
+    </div>
+    <div *ngIf="userFound">
+        <app-user-welcome></app-user-welcome>
+    </div>
 </div>
-<div *ngIf="userFound">
-    <app-user-welcome></app-user-welcome>
+<div *ngIf="!isLoaded">
+    <p>Loading...</p>
 </div>
