@@ -1,4 +1,6 @@
 <div *ngIf="!userFound">
     <app-user-warning [userIndex]="userIndex"></app-user-warning>
 </div>
-<div *ngIf="userFound">User was found</div>
+<div *ngIf="userFound">
+    <app-user-welcome></app-user-welcome>
+</div>

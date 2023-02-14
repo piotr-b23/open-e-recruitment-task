@@ -9,6 +9,7 @@ import { UserSearchComponent } from './user/user-search/user-search.component';
 import { HttpClientModule} from '@angular/common/http';
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserWarningComponent } from './user/user-detail/user-warning/user-warning.component';
+import { UserWelcomeComponent } from './user/user-detail/user-welcome/user-welcome.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { UserWarningComponent } from './user/user-detail/user-warning/user-warni
     UserSearchComponent,
     UserDetailComponent,
     UserWarningComponent,
+    UserWelcomeComponent,
   ],
   imports: [
     BrowserModule,

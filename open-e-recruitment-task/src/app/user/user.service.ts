@@ -14,7 +14,12 @@ export class UserService {
     .get<any>('https://jsonplaceholder.typicode.com/users/' + index)
     .pipe(map(response => {
       this.foundUser = response as User;
+      this.createInitials();
     }));
+  }
+
+  createInitials(): string{ 
+    return this.foundUser!.name.split(' ').map((n)=>n[0]).join('.') + '.';
   }
 
   constructor(private http: HttpClient) { }
