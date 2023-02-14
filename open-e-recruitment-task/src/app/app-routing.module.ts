@@ -5,9 +5,8 @@ import { UserSearchComponent } from './user/user-search/user-search.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/user', pathMatch: 'full' },
-  { path: 'user', component: UserSearchComponent, children: [
-    {path: ':id', component: UserDetailComponent},
-  ] },
+  { path: 'user', component: UserSearchComponent},
+  { path: 'user/:id', component: UserDetailComponent}
 ];
 
 @NgModule({
