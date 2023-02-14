@@ -4,6 +4,15 @@
     </div>
     <div *ngIf="userFound">
         <app-user-welcome></app-user-welcome>
+        <div class="row">
+            <div class="column">
+                <app-user-info></app-user-info>
+            </div>
+            <div class="column">
+                <p>some sample text</p>
+            </div>
+        </div>
+        
     </div>
 </div>
 <div *ngIf="!isLoaded">

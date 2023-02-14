@@ -10,6 +10,8 @@ import { HttpClientModule} from '@angular/common/http';
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserWarningComponent } from './user/user-detail/user-warning/user-warning.component';
 import { UserWelcomeComponent } from './user/user-detail/user-welcome/user-welcome.component';
+import { UserInfoComponent } from './user/user-detail/user-info/user-info.component';
+import { AlbumsComponent } from './user/user-detail/user-info/albums/albums.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { UserWelcomeComponent } from './user/user-detail/user-welcome/user-welco
     UserDetailComponent,
     UserWarningComponent,
     UserWelcomeComponent,
+    UserInfoComponent,
+    AlbumsComponent,
   ],
   imports: [
     BrowserModule,
