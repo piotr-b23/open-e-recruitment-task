@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { UserSearchComponent } from './user/user-search/user-search.component';
 import { HttpClientModule} from '@angular/common/http';
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
+import { UserWarningComponent } from './user/user-detail/user-warning/user-warning.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { UserDetailComponent } from './user/user-detail/user-detail.component';
     HeaderComponent,
     UserSearchComponent,
     UserDetailComponent,
+    UserWarningComponent,
   ],
   imports: [
     BrowserModule,

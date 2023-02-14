@@ -1,1 +1,4 @@
-<p>user-detail works!</p>
+<div *ngIf="!userFound">
+    <app-user-warning [userIndex]="userIndex"></app-user-warning>
+</div>
+<div *ngIf="userFound">User was found</div>

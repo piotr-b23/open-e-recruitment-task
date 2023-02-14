@@ -23,7 +23,6 @@ export class UserSearchComponent {
         error: (error) => {
           if (error.status === 404){
             this.router.navigate(['/user/' + this.userIndex]);
-
           } else {
             //display error message
           }

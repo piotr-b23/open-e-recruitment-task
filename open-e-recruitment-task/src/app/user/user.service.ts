@@ -7,8 +7,7 @@ import { User } from './user.model';
   providedIn: 'root'
 })
 export class UserService {
-  
-  foundUser!: User;
+  foundUser!: User | null;
 
   searchUser(index: number): Observable<any>{
     return this.http
