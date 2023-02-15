@@ -1,7 +1,7 @@
 <div>
     <h2>Images: </h2>
     <div style="text-align: center;">
-        <button> < </button> <span class="page-info">Page: {{pageNumber}}</span> <button> > </button>
+        <button type="button" (click)="onPrevPage()"> < </button> <span class="page-info">Page: {{pageNumber}}</span> <button type="button" (click)="onNextPage()"> > </button>
     </div>
     <div *ngFor="let image of images">
         <app-image-item [image]="image"></app-image-item>

@@ -28,6 +28,20 @@ export class ImageListComponent implements OnInit {
 
   }
 
+  onPrevPage(){
+    this.imageService.getImages(this.albumIndex, this.pageNumber -1).subscribe(images => {
+      this.images = images;
+      this.pageNumber = this.imageService.currentPage;
+    });
+  }
+
+  onNextPage(){
+    this.imageService.getImages(this.albumIndex, this.pageNumber + 1).subscribe(images => {
+      this.images = images;
+      this.pageNumber = this.imageService.currentPage;
+    });
+  }
+
   constructor(private imageService: ImageService, private route: ActivatedRoute) { }
 
 }
