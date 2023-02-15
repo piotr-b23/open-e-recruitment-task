@@ -18,11 +18,12 @@ export class ImageListComponent implements OnInit {
     this.route.paramMap.subscribe((params: ParamMap) => {
       const tempID = params.get('albumid');
       this.albumIndex = tempID? + tempID : 0;
+      this.imageService.getImages(this.albumIndex).subscribe(images => {
+        this.images = images;
+      });
     })
 
-    this.imageService.getImages(this.albumIndex).subscribe(images => {
-      this.images = images;
-    });
+
   }
 
   constructor(private imageService: ImageService, private route: ActivatedRoute) { }
