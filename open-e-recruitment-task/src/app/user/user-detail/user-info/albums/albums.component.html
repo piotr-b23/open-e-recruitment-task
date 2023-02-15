@@ -1,1 +1,12 @@
-<p>albums works!</p>
+<div *ngFor="let album of albums">
+    <a (click)="onClickAlbum()">
+        <div>
+            {{album.title}}
+        </div> 
+    </a>
+    <hr>
+</div>
+<div>
+    <button type="button"> &#8679; </button>
+    <button type="button"> &#8681; </button>
+</div>
