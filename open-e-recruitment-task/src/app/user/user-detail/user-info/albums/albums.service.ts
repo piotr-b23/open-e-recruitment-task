@@ -9,6 +9,7 @@ import { Album } from './album.model';
 export class AlbumsService {
   startPosition: number = 0;
   endPosition: number = 3;
+  albumsArray: Album[] = [];
 
   getAlbums(index: number): Observable<any>{
 
@@ -21,13 +22,13 @@ export class AlbumsService {
       params: searchParams,
     })
     .pipe(map(response => {
-      const postsArray: Album[] = [];
+      
       for (const key in response) {
         if (response.hasOwnProperty(key)) {
-        postsArray.push({ ...response[key]});
+          this.albumsArray.push({ ...response[key]});
         }
       }
-      return postsArray;
+      return this.albumsArray;
     }));
   }
 

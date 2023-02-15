@@ -22,9 +22,19 @@ export class AlbumsComponent implements OnInit{
 
   }
 
+  onPrevAlbum(){
+    
+  }
+
+  onNextAlbum(){
+    
+  }
+
   onClickAlbum(albumID: number){
     console.log('clicked album of id ' + albumID);
   }
+
+
 
 
 }
