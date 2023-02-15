@@ -1,7 +1,14 @@
 <div>
     <h2>Images: </h2>
     <div style="text-align: center;">
-        <button type="button" (click)="onPrevPage()"> < </button> <span class="page-info">Page: {{pageNumber}} of {{totalPages}} pages </span> <button type="button" (click)="onNextPage()"> > </button>
+        <form (ngSubmit)="onSubmit(pageNumber)" #f="ngForm">
+            <button type="button" (click)="onPrevPage()"> < </button>
+             <span class="page-info">Page: 
+                <input name="curPage" type="number" value="{{pageNumber}}" required min="1" max="{{totalPages}}" [(ngModel)]="pageNumber"> of {{totalPages}} pages 
+            </span> 
+            <button type="button" (click)="onNextPage()"> > </button>
+        </form>
+        
     </div>
     <div *ngFor="let image of images">
         <app-image-item [image]="image"></app-image-item>

@@ -51,6 +51,16 @@ export class ImageListComponent implements OnInit {
     }
   }
 
+  onSubmit(page: number){
+
+    if(page <= this.totalPages && page >= 1){
+      this.imageService.getImages(this.albumIndex, page).subscribe(images => {
+        this.images = images;
+        this.pageNumber = this.imageService.currentPage;
+      });
+    }
+  }
+
   constructor(private imageService: ImageService, private route: ActivatedRoute) { }
 
 }

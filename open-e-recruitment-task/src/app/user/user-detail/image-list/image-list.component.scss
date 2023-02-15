@@ -11,3 +11,12 @@ span.page-info {
     font-size: 20px;
     margin: 0 5px 0 5px;
 }
+
+input[type=number]{
+    font-size: 20px;
+    width: 50px;
+}
+
+input.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
