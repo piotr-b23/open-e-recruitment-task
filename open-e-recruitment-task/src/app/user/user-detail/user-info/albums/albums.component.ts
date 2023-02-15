@@ -34,12 +34,4 @@ export class AlbumsComponent implements OnInit, OnDestroy{
     
   }
 
-  onClickAlbum(albumID: number){
-    console.log('clicked album of id ' + albumID);
-    this.router.navigate([`/user/${this.userService.foundUser!.id}/album/${albumID}`]);
-  }
-
-
-
-
 }

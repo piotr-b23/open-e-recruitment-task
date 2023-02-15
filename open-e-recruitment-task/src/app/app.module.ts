@@ -13,6 +13,7 @@ import { UserWelcomeComponent } from './user/user-detail/user-welcome/user-welco
 import { UserInfoComponent } from './user/user-detail/user-info/user-info.component';
 import { AlbumsComponent } from './user/user-detail/user-info/albums/albums.component';
 import { ImageListComponent } from './user/user-detail/image-list/image-list.component';
+import { AlbumItemComponent } from './user/user-detail/user-info/albums/album-item/album-item.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ImageListComponent } from './user/user-detail/image-list/image-list.com
     UserInfoComponent,
     AlbumsComponent,
     ImageListComponent,
+    AlbumItemComponent,
   ],
   imports: [
     BrowserModule,

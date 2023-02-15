@@ -1,12 +1,8 @@
-<div *ngFor="let album of albums">
-    <!-- maybe add album item component -->
-    <a (click)="onClickAlbum(album.id)"> 
-        <div class="album">
-            {{album.title}}
-        </div> 
-    </a>
-</div>
 <div style="text-align: center;">
     <button type="button" (click)="onPrevAlbum()"> &#8679; </button>
     <button type="button" (click)="onNextAlbum()"> &#8681; </button>
 </div>
+<div *ngFor="let album of albums">
+    <app-album-item [album]="album"></app-album-item>
+</div>
+
