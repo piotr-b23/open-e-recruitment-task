@@ -41,14 +41,14 @@ export class ImageService {
         this.imageArray = response.body;
         if(!this.totalPages){
           this.totalPages = this.calculatePages();
+          this.currentPage = 1;
         }
       return this.imageArray;
     }));
   }
 
   calculatePages(){
-    console.log(this.totalImages / this.limit);
-    return this.totalImages / this.limit;
+    return Math.ceil(this.totalImages / this.limit);
   }
 
   constructor(private http: HttpClient) { }
