@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { DisplayImage } from '../display-image.model';
+import { GalleryService } from '../gallery.service';
 
 @Component({
   selector: 'app-gallery-item',
@@ -9,5 +10,15 @@ import { DisplayImage } from '../display-image.model';
 export class GalleryItemComponent {
 
   @Input() displayImage!: DisplayImage;
+  @Input() displayImageIndex!: number;
+
+  isClicked: boolean = false;
+
+  registerClick(){
+    this.isClicked = true;
+    this.galleryService.registerClick(this.displayImageIndex);
+  }
+
+  constructor(private galleryService: GalleryService) {}
 
 }

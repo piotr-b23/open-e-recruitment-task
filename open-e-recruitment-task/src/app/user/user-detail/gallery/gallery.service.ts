@@ -13,9 +13,12 @@ export class GalleryService {
 
   registerClick(imageIndex: number): void {
     this.gallery[imageIndex].clickCounter += 1;
+    if(this.gallery[imageIndex].clickCounter === 2) {
+      this.gallery.splice(imageIndex, 1);
+    }
   }
 
-  
+
 
 
   constructor() { }

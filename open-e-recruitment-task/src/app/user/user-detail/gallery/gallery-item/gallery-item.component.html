@@ -1,5 +1,5 @@
 <span>
     <a>
-        <img src="{{displayImage.url}}" alt="{{displayImage.title}}">
+        <img src="{{displayImage.url}}" alt="{{displayImage.title}}" (click)="registerClick()" [ngClass]="{'clicked': isClicked === true}">
     </a>
 </span>
