@@ -1,13 +1,12 @@
 <div *ngFor="let album of albums">
     <!-- maybe add album item component -->
     <a (click)="onClickAlbum(album.id)"> 
-        <div>
+        <div class="album">
             {{album.title}}
         </div> 
     </a>
-    <hr>
 </div>
-<div>
+<div style="text-align: center;">
     <button type="button"> &#8679; </button>
     <button type="button"> &#8681; </button>
 </div>
