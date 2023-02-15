@@ -31,7 +31,7 @@ export class AlbumsComponent implements OnInit, OnDestroy{
   }
 
   onNextAlbum(){
-    
+    this.albumService.getSpecificAlbum(this.userService.foundUser!.id, this.albumService.startPosition + this.albumService.limit, 1).subscribe();
   }
 
 }
