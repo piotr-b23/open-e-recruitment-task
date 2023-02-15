@@ -40,7 +40,7 @@ export class AlbumsService {
     startPosition: number,
     limit: number
   ): Observable<any> {
-    
+
     let searchParams = new HttpParams();
     searchParams = searchParams.append('_start', startPosition);
     searchParams = searchParams.append('_limit', limit);
@@ -64,7 +64,7 @@ export class AlbumsService {
               for (const key in response) {
                 if (response.hasOwnProperty(key)) {
                   this.albumsArray.splice(2, 1);
-                  this.albumsArray.splice(0, 0, response[key]);                
+                  this.albumsArray.splice(0, 0, response[key]);
                 }
               }
               this.startPosition -= 1;
@@ -82,5 +82,5 @@ export class AlbumsService {
     this.albumsArray = [];
   }
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 }
