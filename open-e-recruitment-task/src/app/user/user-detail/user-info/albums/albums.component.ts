@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { UserService } from 'src/app/user/user.service';
 import { Album } from './album.model';
@@ -9,7 +9,7 @@ import { AlbumsService } from './albums.service';
   templateUrl: './albums.component.html',
   styleUrls: ['./albums.component.scss']
 })
-export class AlbumsComponent implements OnInit{
+export class AlbumsComponent implements OnInit, OnDestroy{
   albums!: Album[];
 
   constructor(private albumService: AlbumsService, private router: Router, private userService: UserService) { }
@@ -20,6 +20,10 @@ export class AlbumsComponent implements OnInit{
       this.albums = albums;
     });
 
+  }
+
+  ngOnDestroy(){
+    this.albumService.clean();
   }
 
   onPrevAlbum(){

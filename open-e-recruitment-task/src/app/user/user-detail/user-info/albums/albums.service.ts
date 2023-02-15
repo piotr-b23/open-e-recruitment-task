@@ -32,5 +32,11 @@ export class AlbumsService {
     }));
   }
 
+  clean(){
+    this.startPosition = 0;
+    this.endPosition = 3;
+    this.albumsArray = [];
+  }
+
   constructor(private http: HttpClient) { }
 }
