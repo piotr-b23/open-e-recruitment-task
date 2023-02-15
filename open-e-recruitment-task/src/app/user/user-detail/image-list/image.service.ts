@@ -9,14 +9,15 @@ import { Image } from './image.model';
 export class ImageService {
   imageArray: Image[] = [];
 
-  getImages(index: number): Observable<any>{
+  getImages(albumIndex: number): Observable<any>{
+    this.imageArray = [];
 
     // let searchParams = new HttpParams();
     // searchParams = searchParams.append('_start', this.startPosition);
     // searchParams = searchParams.append('_limit', this.endPosition);
 
     return this.http
-    .get<any>(`https://jsonplaceholder.typicode.com/album/1/photos`)
+    .get<any>(`https://jsonplaceholder.typicode.com/album/${albumIndex}/photos`)
     .pipe(map(response => {
       
       for (const key in response) {
