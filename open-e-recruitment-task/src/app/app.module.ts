@@ -15,6 +15,8 @@ import { AlbumsComponent } from './user/user-detail/user-info/albums/albums.comp
 import { ImageListComponent } from './user/user-detail/image-list/image-list.component';
 import { AlbumItemComponent } from './user/user-detail/user-info/albums/album-item/album-item.component';
 import { ImageItemComponent } from './user/user-detail/image-list/image-item/image-item.component';
+import { GalleryComponent } from './user/user-detail/gallery/gallery.component';
+import { GalleryItemComponent } from './user/user-detail/gallery/gallery-item/gallery-item.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { ImageItemComponent } from './user/user-detail/image-list/image-item/ima
     ImageListComponent,
     AlbumItemComponent,
     ImageItemComponent,
+    GalleryComponent,
+    GalleryItemComponent,
   ],
   imports: [
     BrowserModule,
