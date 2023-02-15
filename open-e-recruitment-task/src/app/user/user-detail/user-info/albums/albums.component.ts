@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { UserService } from 'src/app/user/user.service';
 import { Album } from './album.model';
 import { AlbumsService } from './albums.service';
@@ -12,7 +12,7 @@ import { AlbumsService } from './albums.service';
 export class AlbumsComponent implements OnInit{
   albums!: Album[];
 
-  constructor(private albumService: AlbumsService, private route: ActivatedRoute, private userService: UserService) { }
+  constructor(private albumService: AlbumsService, private router: Router, private userService: UserService) { }
 
   ngOnInit(): void {
 
@@ -32,6 +32,7 @@ export class AlbumsComponent implements OnInit{
 
   onClickAlbum(albumID: number){
     console.log('clicked album of id ' + albumID);
+    this.router.navigate([`/user/${this.userService.foundUser!.id}/album/${albumID}`]);
   }
 
 
