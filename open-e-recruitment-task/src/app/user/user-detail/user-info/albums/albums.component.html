@@ -1,5 +1,6 @@
 <div *ngFor="let album of albums">
-    <a (click)="onClickAlbum()">
+    <!-- maybe add album item component -->
+    <a (click)="onClickAlbum(album.id)"> 
         <div>
             {{album.title}}
         </div> 

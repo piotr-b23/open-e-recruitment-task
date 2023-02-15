@@ -22,8 +22,8 @@ export class AlbumsComponent implements OnInit{
 
   }
 
-  onClickAlbum(){
-    console.log('clicked album');
+  onClickAlbum(albumID: number){
+    console.log('clicked album of id ' + albumID);
   }
 
 
