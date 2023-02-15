@@ -21,7 +21,7 @@ export class ImageListComponent implements OnInit {
       const tempID = params.get('albumid');
       this.pageNumber = 1;
       this.albumIndex = tempID? + tempID : 0;
-      this.imageService.getImages(this.albumIndex).subscribe(images => {
+      this.imageService.getImages(this.albumIndex,this.pageNumber).subscribe(images => {
         this.images = images;
         this.totalPages = this.imageService.totalPages;
         
