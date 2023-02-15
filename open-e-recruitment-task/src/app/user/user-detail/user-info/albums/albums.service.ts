@@ -63,9 +63,8 @@ export class AlbumsService {
             } else {
               for (const key in response) {
                 if (response.hasOwnProperty(key)) {
-                  this.albumsArray.push(response[key]);
-                  this.albumsArray.splice(0, 0, response[key]);
                   this.albumsArray.splice(2, 1);
+                  this.albumsArray.splice(0, 0, response[key]);                
                 }
               }
               this.startPosition -= 1;

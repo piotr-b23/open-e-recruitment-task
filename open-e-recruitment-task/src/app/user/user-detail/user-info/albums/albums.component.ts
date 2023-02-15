@@ -27,7 +27,7 @@ export class AlbumsComponent implements OnInit, OnDestroy{
   }
 
   onPrevAlbum(){
-    
+    this.albumService.getSpecificAlbum(this.userService.foundUser!.id, this.albumService.startPosition - 1, 1).subscribe();
   }
 
   onNextAlbum(){
