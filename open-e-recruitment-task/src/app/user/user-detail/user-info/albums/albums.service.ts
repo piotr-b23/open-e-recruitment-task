@@ -11,10 +11,9 @@ export class AlbumsService {
   limit: number = 3;
   albumsArray: Album[] = [];
 
+
   getAlbums(
     index: number,
-    startPosition?: number,
-    limit?: number
   ): Observable<any> {
     let searchParams = new HttpParams();
     searchParams = searchParams.append('_start', this.startPosition);
@@ -41,6 +40,7 @@ export class AlbumsService {
     startPosition: number,
     limit: number
   ): Observable<any> {
+    
     let searchParams = new HttpParams();
     searchParams = searchParams.append('_start', startPosition);
     searchParams = searchParams.append('_limit', limit);
