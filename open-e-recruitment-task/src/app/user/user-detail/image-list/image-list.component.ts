@@ -12,6 +12,7 @@ export class ImageListComponent implements OnInit {
 
   images: Image[] = [];
   albumIndex!: number;
+  pageNumber!: number;
 
   ngOnInit(){
 
@@ -22,6 +23,7 @@ export class ImageListComponent implements OnInit {
         this.images = images;
       });
     })
+    this.pageNumber = this.imageService.currentPage;
 
 
   }

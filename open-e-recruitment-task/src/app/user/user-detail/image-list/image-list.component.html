@@ -1,4 +1,10 @@
-<div *ngFor="let image of images">
-    <p> {{image.title}} </p>
-    <hr>
+<div>
+    <h2>Images: </h2>
+    <div style="text-align: center;">
+        <button> < </button> <span class="page-info">Page: {{pageNumber}}</span> <button> > </button>
+    </div>
+    <div *ngFor="let image of images">
+        <app-image-item [image]="image"></app-image-item>
+    </div>
 </div>
+
