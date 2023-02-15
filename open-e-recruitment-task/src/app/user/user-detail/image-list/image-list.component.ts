@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Image } from './image.model';
 import { ImageService } from './image.service';
@@ -14,6 +14,7 @@ export class ImageListComponent implements OnInit {
   albumIndex!: number;
   pageNumber!: number;
   totalPages!: number;
+  
 
   ngOnInit(){
 
