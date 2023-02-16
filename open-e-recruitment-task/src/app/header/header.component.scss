@@ -1,18 +1,26 @@
 h1 {
     text-align: center;
     color: white;
-    font-size: 30px;
+    font-size: 35px;
     letter-spacing: 1px;
     margin: 0;
     padding: 15px;
-    background-color: rgb(85, 85, 85);
+    background-image: linear-gradient(to bottom right, rgb(66, 59, 59), rgb(165, 7, 7));
     font-variant: small-caps;
 }
 
-button {
-    font-size: 25px;
+a {
+    font-size: 30px;
+    text-decoration: none;
     float: left;
-    padding: 5px;
-    
+    padding: 2px;
+    border: 0;
+    cursor: pointer;
+    color: rgb(233, 233, 233);
+    transition: color .3s ease-in-out
+}
+
+a:hover{
+    color: rgb(255, 255, 255);
 }
 
