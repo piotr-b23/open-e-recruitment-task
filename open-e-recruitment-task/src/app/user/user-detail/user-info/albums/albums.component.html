@@ -1,6 +1,6 @@
 <div style="text-align: center;">
-    <button type="button" (click)="changeAlbum(-1)"> &#8679; </button>
-    <button type="button" (click)="changeAlbum(limit)"> &#8681; </button>
+    <button class="btn-navigate" type="button" (click)="changeAlbum(-1)"> &#8679; </button>
+    <button class="btn-navigate" type="button" (click)="changeAlbum(limit)"> &#8681; </button>
 </div>
 <div *ngFor="let album of albums">
     <app-album-item [album]="album"></app-album-item>

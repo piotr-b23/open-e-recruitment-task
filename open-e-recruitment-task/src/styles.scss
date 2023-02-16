@@ -28,3 +28,21 @@ html {
     background-image: linear-gradient(to bottom right, rgb(53, 50, 50), rgb(126, 12, 12));
     color: rgb(255, 255, 255);
 }
+
+.btn-navigate {
+    font-size: 25px;
+    padding: 5px;
+    margin: 5px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+    background-image: linear-gradient(to bottom right, rgb(66, 59, 59), rgb(165, 7, 7));
+    color: white;
+    border: 0;
+}
+
+.btn-navigate:hover{
+    background-image: linear-gradient(to bottom right, rgb(124, 119, 119), rgb(165, 7, 7));
+}
