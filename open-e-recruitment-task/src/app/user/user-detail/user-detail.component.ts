@@ -16,18 +16,18 @@ export class UserDetailComponent implements OnInit, OnDestroy {
 
     this.route.paramMap.subscribe((params: ParamMap) => {
       const tempID = params.get('id');
-      this.userIndex = tempID? + tempID : 0;
+      this.userIndex = tempID ? + tempID : 0;
     })
-          this.userService.searchUser(this.userIndex).subscribe({
-        next: () =>{
-          this.isLoaded = true;
-          this.userFound = true;
-        },
-        error: (error) => {
-          this.isLoaded = true;
-          }
-      });
-    
+    this.userService.searchUser(this.userIndex).subscribe({
+      next: () => {
+        this.isLoaded = true;
+        this.userFound = true;
+      },
+      error: () => {
+        this.isLoaded = true;
+      }
+    });
+
   }
 
 
