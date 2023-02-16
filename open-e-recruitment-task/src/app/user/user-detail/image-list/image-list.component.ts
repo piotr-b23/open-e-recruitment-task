@@ -19,7 +19,7 @@ export class ImageListComponent implements OnInit, OnDestroy {
   paramSubscription!: Subscription;
   imageSubscription!: Subscription;
 
-  ngOnInit(){
+  ngOnInit(): void{
 
     this.paramSubscription = this.route.paramMap.subscribe((params: ParamMap) => {
       const tempID = params.get('albumid');
@@ -36,7 +36,7 @@ export class ImageListComponent implements OnInit, OnDestroy {
 
   }
 
-  onPrevPage(){
+  onPrevPage(): void{
     if(this.pageNumber > 1){
       this.imageSubscription = this.imageService.getImages(this.albumIndex, this.pageNumber -1).subscribe(images => {
         this.images = images;
@@ -45,7 +45,7 @@ export class ImageListComponent implements OnInit, OnDestroy {
     }
   }
 
-  onNextPage(){
+  onNextPage(): void{
 
     if(this.pageNumber < this.totalPages){
       this.imageSubscription = this.imageService.getImages(this.albumIndex, this.pageNumber + 1).subscribe(images => {
@@ -55,7 +55,7 @@ export class ImageListComponent implements OnInit, OnDestroy {
     }
   }
 
-  onSubmit(page: number){
+  onSubmit(page: number): void{
 
     if(page <= this.totalPages && page >= 1){
       this.imageSubscription = this.imageService.getImages(this.albumIndex, page).subscribe(images => {
