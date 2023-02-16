@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { UserService } from '../user.service';
 
 @Component({
@@ -12,13 +13,16 @@ export class UserDetailComponent implements OnInit, OnDestroy {
   userIndex!: number;
   isLoaded: boolean = false;
 
+  paramSubscription!: Subscription;
+  searchSubscription!: Subscription;
+
   ngOnInit(): void {
 
-    this.route.paramMap.subscribe((params: ParamMap) => {
+    this.paramSubscription = this.route.paramMap.subscribe((params: ParamMap) => {
       const tempID = params.get('id');
       this.userIndex = tempID ? + tempID : 0;
     })
-    this.userService.searchUser(this.userIndex).subscribe({
+    this.searchSubscription = this.userService.searchUser(this.userIndex).subscribe({
       next: () => {
         this.isLoaded = true;
         this.userFound = true;
@@ -35,8 +39,8 @@ export class UserDetailComponent implements OnInit, OnDestroy {
     this.userFound = false;
     this.userService.foundUser = null;
     this.isLoaded = false;
-
-
+    this.paramSubscription.unsubscribe();
+    this.searchSubscription.unsubscribe();
   }
 
   constructor(private userService: UserService, private route: ActivatedRoute) { }
