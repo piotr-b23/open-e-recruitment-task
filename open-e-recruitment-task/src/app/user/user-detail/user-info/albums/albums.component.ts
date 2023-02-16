@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/user/user.service';
 import { Album } from './album.model';
 import { AlbumsService } from './albums.service';
@@ -11,6 +11,8 @@ import { AlbumsService } from './albums.service';
 })
 export class AlbumsComponent implements OnInit, OnDestroy{
   albums!: Album[];
+  isDone: boolean = true;
+  limit!: number;
 
   constructor(private albumService: AlbumsService, private router: Router, private userService: UserService) { }
 
@@ -18,20 +20,24 @@ export class AlbumsComponent implements OnInit, OnDestroy{
 
     this.albumService.getAlbums(this.userService.foundUser!.id).subscribe(albums => {
       this.albums = albums;
+      this.limit = this.albumService.limit;
     });
 
   }
 
-  ngOnDestroy(){
+  ngOnDestroy(): void{
     this.albumService.clean();
   }
 
-  onPrevAlbum(){
-    this.albumService.getSpecificAlbum(this.userService.foundUser!.id, this.albumService.startPosition - 1, 1).subscribe();
-  }
-
-  onNextAlbum(){
-    this.albumService.getSpecificAlbum(this.userService.foundUser!.id, this.albumService.startPosition + this.albumService.limit, 1).subscribe();
+  //adjustPage: -1 for going back in list, limit for going up in list
+  changeAlbum(adjustPage: number): void{
+    if (this.isDone){
+      this.isDone = false;
+      this.albumService.getSpecificAlbum(this.userService.foundUser!.id, this.albumService.startPosition + adjustPage, 1).subscribe(()=>{
+        this.isDone = true;
+      });
+    }
+   
   }
 
 }
