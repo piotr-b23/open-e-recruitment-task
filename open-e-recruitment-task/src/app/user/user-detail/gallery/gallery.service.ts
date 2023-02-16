@@ -17,9 +17,6 @@ export class GalleryService {
       this.gallery.splice(imageIndex, 1);
     }
   }
-
-
-
-
+  
   constructor() { }
 }
