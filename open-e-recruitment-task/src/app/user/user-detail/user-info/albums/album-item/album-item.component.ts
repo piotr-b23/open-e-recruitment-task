@@ -11,8 +11,7 @@ import { Album } from '../album.model';
 export class AlbumItemComponent {
   @Input() album!: Album;
 
-  onClickAlbum(albumID: number){
-    console.log('clicked album of id ' + albumID);
+  onClickAlbum(albumID: number): void{
     this.router.navigate([`/user/${this.userService.foundUser!.id}/album/${albumID}`]);
   }
 
