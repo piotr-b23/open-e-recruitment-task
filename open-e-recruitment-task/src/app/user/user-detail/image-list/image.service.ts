@@ -47,7 +47,7 @@ export class ImageService {
     }));
   }
 
-  calculatePages(){
+  calculatePages(): number{
     return Math.ceil(this.totalImages / this.limit);
   }
 

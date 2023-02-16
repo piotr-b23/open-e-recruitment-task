@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { Image } from './image.model';
 import { ImageService } from './image.service';
 
@@ -8,21 +9,23 @@ import { ImageService } from './image.service';
   templateUrl: './image-list.component.html',
   styleUrls: ['./image-list.component.scss']
 })
-export class ImageListComponent implements OnInit {
+export class ImageListComponent implements OnInit, OnDestroy {
 
   images: Image[] = [];
   albumIndex!: number;
   pageNumber!: number;
   totalPages!: number;
   
+  paramSubscription!: Subscription;
+  imageSubscription!: Subscription;
 
   ngOnInit(){
 
-    this.route.paramMap.subscribe((params: ParamMap) => {
+    this.paramSubscription = this.route.paramMap.subscribe((params: ParamMap) => {
       const tempID = params.get('albumid');
       this.pageNumber = 1;
       this.albumIndex = tempID? + tempID : 0;
-      this.imageService.getImages(this.albumIndex,this.pageNumber).subscribe(images => {
+      this.imageSubscription = this.imageService.getImages(this.albumIndex,this.pageNumber).subscribe(images => {
         this.images = images;
         this.totalPages = this.imageService.totalPages;
         
@@ -35,7 +38,7 @@ export class ImageListComponent implements OnInit {
 
   onPrevPage(){
     if(this.pageNumber > 1){
-      this.imageService.getImages(this.albumIndex, this.pageNumber -1).subscribe(images => {
+      this.imageSubscription = this.imageService.getImages(this.albumIndex, this.pageNumber -1).subscribe(images => {
         this.images = images;
         this.pageNumber = this.imageService.currentPage;
       });
@@ -45,7 +48,7 @@ export class ImageListComponent implements OnInit {
   onNextPage(){
 
     if(this.pageNumber < this.totalPages){
-      this.imageService.getImages(this.albumIndex, this.pageNumber + 1).subscribe(images => {
+      this.imageSubscription = this.imageService.getImages(this.albumIndex, this.pageNumber + 1).subscribe(images => {
         this.images = images;
         this.pageNumber = this.imageService.currentPage;
       });
@@ -55,11 +58,16 @@ export class ImageListComponent implements OnInit {
   onSubmit(page: number){
 
     if(page <= this.totalPages && page >= 1){
-      this.imageService.getImages(this.albumIndex, page).subscribe(images => {
+      this.imageSubscription = this.imageService.getImages(this.albumIndex, page).subscribe(images => {
         this.images = images;
         this.pageNumber = this.imageService.currentPage;
       });
     }
+  }
+
+  ngOnDestroy(): void {
+    this.paramSubscription.unsubscribe();
+    this.imageSubscription.unsubscribe();
   }
 
   constructor(private imageService: ImageService, private route: ActivatedRoute) { }
