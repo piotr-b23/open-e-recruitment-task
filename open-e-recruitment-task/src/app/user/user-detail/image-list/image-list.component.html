@@ -3,11 +3,11 @@
     <hr style="margin-bottom: 5px;">
     <div style="text-align: center;">
         <form (ngSubmit)="onSubmit(pageNumber)" #f="ngForm">
-            <button type="button" (click)="onPrevPage()"> < </button>
+            <button class="btn-navigate" type="button" (click)="onPrevPage()"> &#8678; </button>
              <span class="page-info">Page: 
                 <input name="curPage" type="number" value="{{pageNumber}}" required min="1" max="{{totalPages}}" [(ngModel)]="pageNumber"> of {{totalPages}} pages 
             </span> 
-            <button type="button" (click)="onNextPage()"> > </button>
+            <button class="btn-navigate" type="button" (click)="onNextPage()"> &#8680; </button>
         </form>
         
     </div>
