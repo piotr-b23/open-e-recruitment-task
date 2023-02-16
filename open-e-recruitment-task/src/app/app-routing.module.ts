@@ -8,7 +8,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/user', pathMatch: 'full' },
   { path: 'user', component: UserSearchComponent},
   { path: 'user/:id', component: UserDetailComponent, children: [
-    { path: 'album/:albumid', component: ImageListComponent},
+    { path: 'album/:albumid', component: ImageListComponent}
   ]}
 ];
 
