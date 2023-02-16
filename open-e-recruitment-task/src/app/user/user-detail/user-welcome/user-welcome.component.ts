@@ -9,7 +9,7 @@ import { UserService } from '../../user.service';
 export class UserWelcomeComponent implements OnInit {
 initials!: string;
 
-ngOnInit(){
+ngOnInit(): void{
   this.initials = this.userService.createInitials();
 }
 
