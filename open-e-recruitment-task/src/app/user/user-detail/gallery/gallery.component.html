@@ -1,5 +1,5 @@
 <div>
-    <span *ngFor="let displayImage of displayImages; let i = index">
+    <ng-container *ngFor="let displayImage of displayImages; let i = index">
         <app-gallery-item [displayImage]="displayImage" [displayImageIndex]="i"></app-gallery-item>
-    </span>
+    </ng-container>
 </div>
