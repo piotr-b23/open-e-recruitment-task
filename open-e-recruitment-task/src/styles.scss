@@ -13,20 +13,18 @@ html {
 }
 
 .btn-submit {
-    border: 0;
+    border: 1px solid black;
     background-image: linear-gradient(to bottom right, rgb(66, 59, 59), rgb(165, 7, 7));
     color: white;
     border-radius: 5px;
 }
 
 .btn-submit:disabled {
-    border: 0;
     background-image: linear-gradient(to bottom right, rgb(94, 85, 85), rgb(187, 7, 7));
     color: rgb(196, 196, 196);
 }
 
 .btn-submit:hover:enabled {
-    border: 0;
     background-image: linear-gradient(to bottom right, rgb(53, 50, 50), rgb(126, 12, 12));
     color: rgb(255, 255, 255);
 }
