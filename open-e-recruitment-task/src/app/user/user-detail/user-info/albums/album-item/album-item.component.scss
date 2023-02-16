@@ -3,5 +3,8 @@ div.album{
     padding: 10px;
     margin: 10px;
     font-size: 20px;
+}
 
+div.album:hover{
+    background-color: rgb(206, 206, 206);
 }
