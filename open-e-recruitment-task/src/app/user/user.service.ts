@@ -13,7 +13,7 @@ export class UserService {
     return this.http
     .get<any>('https://jsonplaceholder.typicode.com/users/' + index)
     .pipe(map(response => {
-      this.foundUser = response as User;
+      this.foundUser = response;
     }));
   }
 
