@@ -8,7 +8,7 @@
     min="1"
     required
   />
-  <button type="submit" [disabled]="!f.valid">Submit</button>
+  <button class="btn-submit" type="submit" [disabled]="!f.valid">Submit</button>
   <p *ngIf="!f.valid && f.touched">Please enter correct value.</p>
 </form>
 <router-outlet></router-outlet>

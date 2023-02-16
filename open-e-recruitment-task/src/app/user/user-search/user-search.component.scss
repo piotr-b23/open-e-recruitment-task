@@ -1,5 +1,10 @@
 input.ng-invalid.ng-touched{
-    border: 1px solid red;
+    border: 3px solid rgb(212, 8, 8);
+    background-color: rgb(255, 192, 192);
+}
+
+input {
+    border-radius: 3px;
 }
 
 * {
@@ -11,4 +16,9 @@ input.ng-invalid.ng-touched{
 
 label {
     font-size: 25px;
+    color: white;
+}
+
+p {
+    color: white;
 }

@@ -8,6 +8,25 @@
 }
 
 html {
-    background-image: linear-gradient(180deg, rgba(198,191,189,1) 0%, rgba(117,105,105,1) 42%, rgba(66,62,62,1) 100%);
+    background-image: linear-gradient(4deg, rgba(113,109,109,1) 0%, rgba(115,97,97,1) 33%, rgba(88,71,71,1) 64%, rgba(119,100,100,1) 90%);
     min-height: 100%;
+}
+
+.btn-submit {
+    border: 0;
+    background-image: linear-gradient(to bottom right, rgb(66, 59, 59), rgb(165, 7, 7));
+    color: white;
+    border-radius: 5px;
+}
+
+.btn-submit:disabled {
+    border: 0;
+    background-image: linear-gradient(to bottom right, rgb(94, 85, 85), rgb(187, 7, 7));
+    color: rgb(196, 196, 196);
+}
+
+.btn-submit:hover:enabled {
+    border: 0;
+    background-image: linear-gradient(to bottom right, rgb(53, 50, 50), rgb(126, 12, 12));
+    color: rgb(255, 255, 255);
 }
