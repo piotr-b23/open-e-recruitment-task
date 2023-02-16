@@ -4,5 +4,8 @@ div.album{
     margin: 10px;
     font-size: 20px;
     user-select: none;
+}
 
+div.album:hover{
+    background-color: rgb(158, 180, 212);
 }
